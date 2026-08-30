@@ -1,4 +1,4 @@
-// ===== Björklunda dashboard — interactivity =====
+// ===== Birchdale dashboard — interactivity =====
 
 document.addEventListener('DOMContentLoaded', () => {
   initToast();
@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initCalendar();
   initProgressBars();
   initButtons();
+  initRipple();
   initClock();
 });
 
@@ -36,19 +37,18 @@ function initNav() {
       links.forEach(l => l.classList.remove('active'));
       link.classList.add('active');
       const label = link.textContent.trim();
-      showToast(`Visar ${label.toLowerCase()}`);
+      showToast(`Showing ${label}`);
     });
   });
 }
 
 /* ---------- Mini calendar (real month grid) ---------- */
 const MONTH_NAMES = [
-  'Januari', 'Februari', 'Mars', 'April', 'Maj', 'Juni',
-  'Juli', 'Augusti', 'September', 'Oktober', 'November', 'December'
+  'January', 'February', 'March', 'April', 'May', 'June',
+  'July', 'August', 'September', 'October', 'November', 'December'
 ];
-const DOW_LABELS = ['M', 'T', 'O', 'T', 'F', 'L', 'S'];
 
-let calState = { year: 2024, month: 4, todayDate: 20 }; // month is 0-indexed (4 = maj)
+let calState = { year: 2024, month: 4, todayDate: 20 }; // month is 0-indexed (4 = May)
 
 function initCalendar() {
   const head = document.querySelector('.mini-cal-head');
@@ -56,9 +56,9 @@ function initCalendar() {
   if (!head || !grid) return;
 
   head.innerHTML = `
-    <button type="button" data-dir="-1" aria-label="Föregående månad">‹</button>
+    <button type="button" data-dir="-1" aria-label="Previous month">‹</button>
     <span class="cal-label"></span>
-    <button type="button" data-dir="1" aria-label="Nästa månad">›</button>
+    <button type="button" data-dir="1" aria-label="Next month">›</button>
   `;
 
   head.querySelectorAll('button').forEach(btn => {
@@ -118,7 +118,7 @@ function renderCalendar() {
           calState.todayDate = cell.n;
           renderCalendar();
         }
-        showToast(`${cell.n} ${MONTH_NAMES[month]} ${year} vald`);
+        showToast(`${MONTH_NAMES[month]} ${cell.n}, ${year} selected`);
       });
     }
     grid.appendChild(btn);
@@ -140,26 +140,45 @@ function initProgressBars() {
 function initButtons() {
   const mapBtn = document.querySelector('.map-btn');
   if (mapBtn) {
-    mapBtn.addEventListener('click', () => showToast('🌿 Öppnar kartan över Björklunda…'));
+    mapBtn.addEventListener('click', () => showToast('🌿 Opening the Birchdale map…'));
   }
 
   const inviteBtn = document.querySelector('.invite-btn');
   if (inviteBtn) {
-    inviteBtn.addEventListener('click', () => showToast('🌱 Inbjudan skickad till en ny granne!'));
+    inviteBtn.addEventListener('click', () => showToast('🌱 Invitation sent to a new neighbor!'));
   }
 
   document.querySelectorAll('.neighbor').forEach(n => {
     n.style.cursor = 'pointer';
     n.addEventListener('click', () => {
-      const name = n.querySelector('.name')?.textContent || 'Grannen';
-      showToast(`Besöker ${name}s hus`);
+      const name = n.querySelector('.name')?.textContent || 'Neighbor';
+      showToast(`Visiting ${name}'s house`);
     });
   });
 
   document.querySelectorAll('.see-all').forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      showToast('Visar alla objekt i den här listan');
+      showToast('Showing all items in this list');
+    });
+  });
+}
+
+/* ---------- Ripple effect on buttons ---------- */
+function initRipple() {
+  document.querySelectorAll('.map-btn, .invite-btn, .mini-cal-head button').forEach(btn => {
+    btn.style.position = btn.style.position || 'relative';
+    btn.style.overflow = 'hidden';
+    btn.addEventListener('click', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const size = Math.max(rect.width, rect.height) * 1.4;
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      ripple.style.width = ripple.style.height = `${size}px`;
+      ripple.style.left = `${e.clientX - rect.left - size / 2}px`;
+      ripple.style.top = `${e.clientY - rect.top - size / 2}px`;
+      btn.appendChild(ripple);
+      ripple.addEventListener('animationend', () => ripple.remove());
     });
   });
 }
@@ -168,14 +187,13 @@ function initButtons() {
 function initClock() {
   const timeEl = document.querySelector('.hero-datebox');
   if (!timeEl) return;
-  const dateSpan = timeEl.querySelector('span');
 
   function update() {
     const now = new Date();
     const hh = String(now.getHours()).padStart(2, '0');
     const mm = String(now.getMinutes()).padStart(2, '0');
     // Keep the fictional in-game date, only the clock is "live"
-    timeEl.innerHTML = `<span>20 maj 2024</span><br>Vår · ${hh}:${mm}`;
+    timeEl.innerHTML = `<span>May 20, 2024</span><br>Spring · ${hh}:${mm}`;
   }
   update();
   setInterval(update, 1000 * 30);

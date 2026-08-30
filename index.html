@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="sv">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Björklunda — Din gårds-översikt</title>
+<title>Birchdale — Farm Overview</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -18,26 +18,26 @@
         <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 L21 10 V21 H3 V10 Z" fill="#FCF6E3"/><path d="M9 21 V14 H15 V21" fill="#8D2A19"/></svg>
       </div>
       <div class="brand-text">
-        <div class="eyebrow">Välkommen till</div>
-        <div class="name">Björklunda</div>
+        <div class="eyebrow">Welcome to</div>
+        <div class="name">Birchdale</div>
       </div>
     </div>
 
     <nav class="mainnav">
-      <a class="navlink active" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 2 12h3v8h6v-6h2v6h6v-8h3z"/></svg>Hem</a>
-      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v4H4zM4 10h10v4H4zM4 16h16v4H4z"/></svg>Översikt</a>
-      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 3l1.5 3H16v2h-1l-1 12H10L9 8H8V6h5.5L12 3zM5 8h2l1 12H6z"/></svg>Uppgifter</a>
-      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 5h16v3H4zM4 10h7v9H4zM13 10h7v9h-7z"/></svg>Samlingar</a>
-      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg>Grannar</a>
-      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 5h16v14H4zM4 15l4-4 3 3 5-6 4 5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Bilder</a>
+      <a class="navlink active" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 2 12h3v8h6v-6h2v6h6v-8h3z"/></svg>Home</a>
+      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v4H4zM4 10h10v4H4zM4 16h16v4H4z"/></svg>Overview</a>
+      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 3l1.5 3H16v2h-1l-1 12H10L9 8H8V6h5.5L12 3zM5 8h2l1 12H6z"/></svg>Tasks</a>
+      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 5h16v3H4zM4 10h7v9H4zM13 10h7v9h-7z"/></svg>Collections</a>
+      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg>Neighbors</a>
+      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 5h16v14H4zM4 15l4-4 3 3 5-6 4 5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Photos</a>
       <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 20l3-9 9-9 3 3-9 9zM14 5l5 5"/></svg>Design</a>
-      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 3h9l3 3v15H6zM14 3v4h4"/></svg>Anteckningar</a>
+      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 3h9l3 3v15H6zM14 3v4h4"/></svg>Notes</a>
     </nav>
 
     <div class="side-tip">
       <div class="tip-avatar">🦔</div>
-      <div class="tip-label">Dagens tips</div>
-      <p>Skörda vetefältet innan skymningen — det ger extra mynt när himlen är gyllene.</p>
+      <div class="tip-label">Tip of the day</div>
+      <p>Harvest the wheat field before dusk — it pays out extra coins while the sky turns gold.</p>
     </div>
   </aside>
 
@@ -62,8 +62,8 @@
           </linearGradient>
         </defs>
         <rect width="1000" height="230" fill="url(#sky)"/>
-        <circle cx="880" cy="46" r="34" fill="#FFEC89" opacity="0.95"/>
-        <circle cx="880" cy="46" r="50" fill="#FFEC89" opacity="0.18"/>
+        <circle class="hero-sun" cx="880" cy="46" r="34" fill="#FFEC89" opacity="0.95"/>
+        <circle class="hero-sun-glow" cx="880" cy="46" r="50" fill="#FFEC89" opacity="0.18"/>
         <!-- distant hill -->
         <path d="M0,150 Q150,110 320,140 T650,130 T1000,150 V230 H0 Z" fill="#7C99D6" opacity="0.55"/>
         <!-- lake -->
@@ -71,7 +71,7 @@
         <path d="M700,185 q14,-8 26,0" stroke="#AFC2E8" stroke-width="2" fill="none" opacity="0.6"/>
         <path d="M760,198 q14,-8 26,0" stroke="#AFC2E8" stroke-width="2" fill="none" opacity="0.6"/>
         <!-- sailboat -->
-        <g transform="translate(830,168)">
+        <g class="hero-boat" transform="translate(830,168)">
           <path d="M-14,10 L14,10 L9,17 L-9,17 Z" fill="#F6EBC7"/>
           <line x1="0" y1="10" x2="0" y2="-16" stroke="#F6EBC7" stroke-width="2"/>
           <path d="M0,-14 L14,4 L0,4 Z" fill="#FCF6E3"/>
@@ -105,19 +105,19 @@
       <div class="hero-content">
         <div class="hero-top">
           <div>
-            <h1 class="hero-title">🌻 Välkommen tillbaka!</h1>
-            <p class="hero-sub">Här är en översikt av din gård Björklunda</p>
+            <h1 class="hero-title">🌻 Welcome back!</h1>
+            <p class="hero-sub">Here's an overview of your farm, Birchdale</p>
           </div>
           <div style="display:flex; flex-direction:column; align-items:flex-end; gap:8px;">
             <div class="hero-datebox">
-              <span>20 maj 2024</span><br>Vår · 09:45
+              <span>May 20, 2024</span><br>Spring · 09:45
             </div>
             <div class="hero-avatar">🧑‍🌾</div>
           </div>
         </div>
         <div class="hero-card">
           <span class="dot"></span>
-          <span>Vetet är redo att skördas i morgon 🌾</span>
+          <span>The wheat will be ready to harvest tomorrow 🌾</span>
         </div>
       </div>
     </section>
@@ -125,47 +125,47 @@
     <!-- GRID -->
     <div class="grid">
 
-      <!-- Översikt -->
-      <div class="card">
-        <div class="card-head"><h2><span class="ic">⭐</span>Översikt</h2></div>
+      <!-- Overview -->
+      <div class="card reveal">
+        <div class="card-head"><h2><span class="ic">⭐</span>Overview</h2></div>
         <div class="rating-row">
           <span class="stars"><span class="filled">★★★★</span>☆</span>
-          <span class="rating-num">4,0</span>
+          <span class="rating-num">4.0</span>
         </div>
         <div class="mini-cal">
           <div class="mini-cal-head"></div>
           <div class="mini-cal-grid">
-            <span class="dow">M</span><span class="dow">T</span><span class="dow">O</span><span class="dow">T</span><span class="dow">F</span><span class="dow">L</span><span class="dow">S</span>
+            <span class="dow">M</span><span class="dow">T</span><span class="dow">W</span><span class="dow">T</span><span class="dow">F</span><span class="dow">S</span><span class="dow">S</span>
           </div>
         </div>
-        <div class="stat-line"><span>Gårds-ID</span><b>BJ-2456-9101</b></div>
-        <div class="stat-line"><span>Grannar</span><b>8 / 10</b></div>
+        <div class="stat-line"><span>Farm ID</span><b>BD-2456-9101</b></div>
+        <div class="stat-line"><span>Neighbors</span><b>8 / 10</b></div>
       </div>
 
-      <!-- Uppgifter -->
-      <div class="card">
-        <div class="card-head"><h2><span class="ic">📋</span>Uppgifter</h2><a class="see-all" href="#">Visa alla</a></div>
+      <!-- Tasks -->
+      <div class="card reveal">
+        <div class="card-head"><h2><span class="ic">📋</span>Tasks</h2><a class="see-all" href="#">See all</a></div>
         <div class="task">
-          <div class="task-top"><span>Nå 5 stjärnor på din gård</span><span class="count">4 / 5</span></div>
+          <div class="task-top"><span>Reach a 5-star farm rating</span><span class="count">4 / 5</span></div>
           <div class="bar"><div class="bar-fill" style="width:80%"></div></div>
         </div>
         <div class="task">
-          <div class="task-top"><span>Plantera 100 vetestrån</span><span class="count">68 / 100</span></div>
+          <div class="task-top"><span>Plant 100 wheat stalks</span><span class="count">68 / 100</span></div>
           <div class="bar"><div class="bar-fill blue" style="width:68%"></div></div>
         </div>
         <div class="task">
-          <div class="task-top"><span>Samla alla byggrecept</span><span class="count">210 / 602</span></div>
+          <div class="task-top"><span>Collect every build recipe</span><span class="count">210 / 602</span></div>
           <div class="bar"><div class="bar-fill red" style="width:35%"></div></div>
         </div>
         <div class="task">
-          <div class="task-top"><span>Fånga alla fiskar</span><span class="count">43 / 80</span></div>
+          <div class="task-top"><span>Catch every fish</span><span class="count">43 / 80</span></div>
           <div class="bar"><div class="bar-fill" style="width:54%"></div></div>
         </div>
       </div>
 
-      <!-- Senaste bilden -->
-      <div class="card">
-        <div class="card-head"><h2><span class="ic">🖼️</span>Senaste bilden</h2><a class="see-all" href="#">Visa alla</a></div>
+      <!-- Latest photo -->
+      <div class="card reveal">
+        <div class="card-head"><h2><span class="ic">🖼️</span>Latest photo</h2><a class="see-all" href="#">See all</a></div>
         <div class="photo-frame">
           <svg viewBox="0 0 300 126" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
             <rect width="300" height="126" fill="#6E8AD1"/>
@@ -177,27 +177,27 @@
             <circle cx="250" cy="30" r="14" fill="#FFEC89"/>
           </svg>
         </div>
-        <div class="photo-caption"><b>Skörden är i full gång 🌾</b><br>19 maj 2024</div>
+        <div class="photo-caption"><b>Harvest season is in full swing 🌾</b><br>May 19, 2024</div>
       </div>
 
-      <!-- Samlingar -->
-      <div class="card">
-        <div class="card-head"><h2><span class="ic">🎒</span>Samlingar</h2><a class="see-all" href="#">Visa alla</a></div>
+      <!-- Collections -->
+      <div class="card reveal">
+        <div class="card-head"><h2><span class="ic">🎒</span>Collections</h2><a class="see-all" href="#">See all</a></div>
         <div class="collect-row">
-          <div class="collect-item"><span class="ic">🐟</span><span class="num">43/80</span><span class="lab">Fiskar</span></div>
-          <div class="collect-item"><span class="ic">🦋</span><span class="num">38/80</span><span class="lab">Insekter</span></div>
-          <div class="collect-item"><span class="ic">🌾</span><span class="num">210/602</span><span class="lab">Recept</span></div>
-          <div class="collect-item"><span class="ic">🛠️</span><span class="num">12/47</span><span class="lab">Verktyg</span></div>
+          <div class="collect-item"><span class="ic">🐟</span><span class="num">43/80</span><span class="lab">Fish</span></div>
+          <div class="collect-item"><span class="ic">🦋</span><span class="num">38/80</span><span class="lab">Bugs</span></div>
+          <div class="collect-item"><span class="ic">🌾</span><span class="num">210/602</span><span class="lab">Recipes</span></div>
+          <div class="collect-item"><span class="ic">🛠️</span><span class="num">12/47</span><span class="lab">Tools</span></div>
         </div>
         <div class="goal-box">
-          <span class="txt">Mål: Fånga alla fiskar</span>
+          <span class="txt">Goal: Catch every fish</span>
           <span class="sub">43 / 80</span>
         </div>
       </div>
 
-      <!-- Min gård (map) -->
-      <div class="card">
-        <div class="card-head"><h2><span class="ic">🗺️</span>Min gård</h2></div>
+      <!-- My farm (map) -->
+      <div class="card reveal">
+        <div class="card-head"><h2><span class="ic">🗺️</span>My farm</h2></div>
         <div class="map-box">
           <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
             <rect width="300" height="150" fill="#F4E6A8"/>
@@ -210,12 +210,12 @@
             <circle cx="170" cy="110" r="6" fill="#BA3821"/>
           </svg>
         </div>
-        <button type="button" class="map-btn">🌿 Visa karta</button>
+        <button type="button" class="map-btn">🌿 View map</button>
       </div>
 
-      <!-- Grannar -->
-      <div class="card">
-        <div class="card-head"><h2><span class="ic">🏡</span>Grannar</h2><a class="see-all" href="#">Visa alla</a></div>
+      <!-- Neighbors -->
+      <div class="card reveal">
+        <div class="card-head"><h2><span class="ic">🏡</span>Neighbors</h2><a class="see-all" href="#">See all</a></div>
         <div class="neighbors">
           <div class="neighbor"><div class="avatar" style="background:#FFEC89">🦌</div><div class="name">Elsa</div></div>
           <div class="neighbor"><div class="avatar" style="background:#E7ECF7">🐰</div><div class="name">Astrid</div></div>
@@ -226,24 +226,24 @@
           <div class="neighbor"><div class="avatar" style="background:#F3D6CE">🐤</div><div class="name">Signe</div></div>
           <div class="neighbor"><div class="avatar" style="background:#FCE7A6">🐑</div><div class="name">Erik</div></div>
         </div>
-        <button type="button" class="invite-btn">🌱 Bjud in fler grannar</button>
+        <button type="button" class="invite-btn">🌱 Invite more neighbors</button>
       </div>
 
-      <!-- Anteckningar -->
-      <div class="card span-3">
-        <div class="card-head"><h2><span class="ic">📝</span>Anteckningar</h2></div>
+      <!-- Notes -->
+      <div class="card span-3 reveal">
+        <div class="card-head"><h2><span class="ic">📝</span>Notes</h2></div>
         <div class="notes-row">
           <div class="note yellow">
-            <p class="note-label">Idéer</p>
-            <ul><li>Bygg en marknadsstånd vid gårdshuset</li><li>Anlägg en äppellund bakom logen</li></ul>
+            <p class="note-label">Ideas</p>
+            <ul><li>Build a market stall by the farmhouse</li><li>Plant an apple orchard behind the barn</li></ul>
           </div>
           <div class="note red">
-            <p class="note-label">Uppgradera boden</p>
-            <p>Behöver sälja mer vete för att bygga ut butiken</p>
+            <p class="note-label">Upgrade the shed</p>
+            <p>Need to sell more wheat to expand the store</p>
           </div>
           <div class="note blue">
-            <p class="note-label">Drömmer om…</p>
-            <p>Ett mysigt sommarhus vid sjön med egen brygga</p>
+            <p class="note-label">Dreaming of…</p>
+            <p>A cozy summer house by the lake with its own dock</p>
           </div>
         </div>
       </div>
