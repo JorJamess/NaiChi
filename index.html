@@ -14,28 +14,29 @@
   <!-- SIDEBAR -->
   <aside class="sidebar">
     <div class="brand">
-      <div class="brand-mark">
+      <div class="brand-mark" aria-hidden="true">
         <svg viewBox="0 0 24 24" fill="none"><path d="M12 3 L21 10 V21 H3 V10 Z" fill="#FCF6E3"/><path d="M9 21 V14 H15 V21" fill="#8D2A19"/></svg>
       </div>
       <div class="brand-text">
         <div class="eyebrow">Welcome to</div>
         <div class="name">Birchdale</div>
       </div>
+      <button type="button" id="themeToggle" class="theme-toggle" aria-pressed="false" aria-label="Switch to dark mode">🌙</button>
     </div>
 
     <nav class="mainnav">
-      <a class="navlink active" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 2 12h3v8h6v-6h2v6h6v-8h3z"/></svg>Home</a>
-      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4h16v4H4zM4 10h10v4H4zM4 16h16v4H4z"/></svg>Overview</a>
-      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 3l1.5 3H16v2h-1l-1 12H10L9 8H8V6h5.5L12 3zM5 8h2l1 12H6z"/></svg>Tasks</a>
-      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 5h16v3H4zM4 10h7v9H4zM13 10h7v9h-7z"/></svg>Collections</a>
-      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg>Neighbors</a>
-      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 5h16v14H4zM4 15l4-4 3 3 5-6 4 5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Photos</a>
-      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 20l3-9 9-9 3 3-9 9zM14 5l5 5"/></svg>Design</a>
-      <a class="navlink" href="#"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 3h9l3 3v15H6zM14 3v4h4"/></svg>Notes</a>
+      <a class="navlink active" href="#" data-nav="home" aria-current="page"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3 2 12h3v8h6v-6h2v6h6v-8h3z"/></svg>Home</a>
+      <a class="navlink" href="#" data-nav="overview"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16v4H4zM4 10h10v4H4zM4 16h16v4H4z"/></svg>Overview</a>
+      <a class="navlink" href="#" data-nav="tasks"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 3l1.5 3H16v2h-1l-1 12H10L9 8H8V6h5.5L12 3zM5 8h2l1 12H6z"/></svg>Tasks</a>
+      <a class="navlink" href="#" data-nav="collections"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 5h16v3H4zM4 10h7v9H4zM13 10h7v9h-7z"/></svg>Collections</a>
+      <a class="navlink" href="#" data-nav="neighbors"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7z"/></svg>Neighbors</a>
+      <a class="navlink" href="#" data-nav="photos"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 5h16v14H4zM4 15l4-4 3 3 5-6 4 5" fill="none" stroke="currentColor" stroke-width="2"/></svg>Photos</a>
+      <a class="navlink" href="#" data-nav="design"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 20l3-9 9-9 3 3-9 9zM14 5l5 5"/></svg>Design</a>
+      <a class="navlink" href="#" data-nav="notes"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6 3h9l3 3v15H6zM14 3v4h4"/></svg>Notes</a>
     </nav>
 
     <div class="side-tip">
-      <div class="tip-avatar">🦔</div>
+      <div class="tip-avatar" aria-hidden="true">🦔</div>
       <div class="tip-label">Tip of the day</div>
       <p>Harvest the wheat field before dusk — it pays out extra coins while the sky turns gold.</p>
     </div>
@@ -46,7 +47,7 @@
 
     <!-- HERO -->
     <section class="hero">
-      <svg viewBox="0 0 1000 230" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <svg viewBox="0 0 1000 230" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs>
           <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stop-color="#5E7FC7"/>
@@ -126,10 +127,10 @@
     <div class="grid">
 
       <!-- Overview -->
-      <div class="card reveal">
+      <div class="card reveal" data-section="overview">
         <div class="card-head"><h2><span class="ic">⭐</span>Overview</h2></div>
         <div class="rating-row">
-          <span class="stars"><span class="filled">★★★★</span>☆</span>
+          <span class="stars" role="img" aria-label="Rating: 4.0 out of 5 stars"><span class="filled">★★★★</span>☆</span>
           <span class="rating-num">4.0</span>
         </div>
         <div class="mini-cal">
@@ -143,31 +144,16 @@
       </div>
 
       <!-- Tasks -->
-      <div class="card reveal">
+      <div class="card reveal" data-section="tasks">
         <div class="card-head"><h2><span class="ic">📋</span>Tasks</h2><a class="see-all" href="#">See all</a></div>
-        <div class="task">
-          <div class="task-top"><span>Reach a 5-star farm rating</span><span class="count">4 / 5</span></div>
-          <div class="bar"><div class="bar-fill" style="width:80%"></div></div>
-        </div>
-        <div class="task">
-          <div class="task-top"><span>Plant 100 wheat stalks</span><span class="count">68 / 100</span></div>
-          <div class="bar"><div class="bar-fill blue" style="width:68%"></div></div>
-        </div>
-        <div class="task">
-          <div class="task-top"><span>Collect every build recipe</span><span class="count">210 / 602</span></div>
-          <div class="bar"><div class="bar-fill red" style="width:35%"></div></div>
-        </div>
-        <div class="task">
-          <div class="task-top"><span>Catch every fish</span><span class="count">43 / 80</span></div>
-          <div class="bar"><div class="bar-fill" style="width:54%"></div></div>
-        </div>
+        <div class="tasks-list" id="tasksList"></div>
       </div>
 
       <!-- Latest photo -->
-      <div class="card reveal">
+      <div class="card reveal" data-section="photos">
         <div class="card-head"><h2><span class="ic">🖼️</span>Latest photo</h2><a class="see-all" href="#">See all</a></div>
         <div class="photo-frame">
-          <svg viewBox="0 0 300 126" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 300 126" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect width="300" height="126" fill="#6E8AD1"/>
             <rect y="70" width="300" height="56" fill="#EFCF4E"/>
             <polygon points="20,70 45,30 70,70" fill="#8D2A19"/>
@@ -181,25 +167,17 @@
       </div>
 
       <!-- Collections -->
-      <div class="card reveal">
+      <div class="card reveal" data-section="collections">
         <div class="card-head"><h2><span class="ic">🎒</span>Collections</h2><a class="see-all" href="#">See all</a></div>
-        <div class="collect-row">
-          <div class="collect-item"><span class="ic">🐟</span><span class="num">43/80</span><span class="lab">Fish</span></div>
-          <div class="collect-item"><span class="ic">🦋</span><span class="num">38/80</span><span class="lab">Bugs</span></div>
-          <div class="collect-item"><span class="ic">🌾</span><span class="num">210/602</span><span class="lab">Recipes</span></div>
-          <div class="collect-item"><span class="ic">🛠️</span><span class="num">12/47</span><span class="lab">Tools</span></div>
-        </div>
-        <div class="goal-box">
-          <span class="txt">Goal: Catch every fish</span>
-          <span class="sub">43 / 80</span>
-        </div>
+        <div class="collect-row" id="collectRow"></div>
+        <div class="goal-box" id="goalBox"></div>
       </div>
 
       <!-- My farm (map) -->
-      <div class="card reveal">
+      <div class="card reveal" data-section="design">
         <div class="card-head"><h2><span class="ic">🗺️</span>My farm</h2></div>
         <div class="map-box">
-          <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg">
+          <svg viewBox="0 0 300 150" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
             <rect width="300" height="150" fill="#F4E6A8"/>
             <path d="M30,20 Q100,60 90,140" stroke="#4A69B3" stroke-width="10" fill="none" opacity="0.75"/>
             <rect x="120" y="60" width="34" height="26" fill="#BA3821"/>
@@ -214,38 +192,23 @@
       </div>
 
       <!-- Neighbors -->
-      <div class="card reveal">
+      <div class="card reveal" data-section="neighbors">
         <div class="card-head"><h2><span class="ic">🏡</span>Neighbors</h2><a class="see-all" href="#">See all</a></div>
-        <div class="neighbors">
-          <div class="neighbor"><div class="avatar" style="background:#FFEC89">🦌</div><div class="name">Elsa</div></div>
-          <div class="neighbor"><div class="avatar" style="background:#E7ECF7">🐰</div><div class="name">Astrid</div></div>
-          <div class="neighbor"><div class="avatar" style="background:#F3D6CE">🦊</div><div class="name">Sixten</div></div>
-          <div class="neighbor"><div class="avatar" style="background:#D9E2F5">🐻</div><div class="name">Nils</div></div>
-          <div class="neighbor"><div class="avatar" style="background:#FCE7A6">🐿️</div><div class="name">Greta</div></div>
-          <div class="neighbor"><div class="avatar" style="background:#E7ECF7">🦔</div><div class="name">Olle</div></div>
-          <div class="neighbor"><div class="avatar" style="background:#F3D6CE">🐤</div><div class="name">Signe</div></div>
-          <div class="neighbor"><div class="avatar" style="background:#FCE7A6">🐑</div><div class="name">Erik</div></div>
-        </div>
+        <div class="neighbors" id="neighborsList"></div>
         <button type="button" class="invite-btn">🌱 Invite more neighbors</button>
       </div>
 
       <!-- Notes -->
-      <div class="card span-3 reveal">
-        <div class="card-head"><h2><span class="ic">📝</span>Notes</h2></div>
-        <div class="notes-row">
-          <div class="note yellow">
-            <p class="note-label">Ideas</p>
-            <ul><li>Build a market stall by the farmhouse</li><li>Plant an apple orchard behind the barn</li></ul>
-          </div>
-          <div class="note red">
-            <p class="note-label">Upgrade the shed</p>
-            <p>Need to sell more wheat to expand the store</p>
-          </div>
-          <div class="note blue">
-            <p class="note-label">Dreaming of…</p>
-            <p>A cozy summer house by the lake with its own dock</p>
+      <div class="card span-3 reveal" data-section="notes">
+        <div class="card-head">
+          <h2><span class="ic">📝</span>Notes</h2>
+          <div class="notes-search-wrap">
+            <label for="notesSearch" class="visually-hidden">Search notes</label>
+            <input type="search" id="notesSearch" class="notes-search" placeholder="Search notes…" autocomplete="off">
           </div>
         </div>
+        <div class="notes-row" id="notesRow"></div>
+        <p class="notes-empty" id="notesEmpty" hidden>No notes match your search.</p>
       </div>
 
     </div>
